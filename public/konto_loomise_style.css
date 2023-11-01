@@ -1,0 +1,76 @@
+* {box-sizing: border-box}
+
+h1 {
+    font-family: Arial, Helvetica, sans-serif
+}
+p {
+    font-family: Arial, Helvetica, sans-serif;
+}
+/* Full-width input fields */
+  input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-right: 150px;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+
+}
+.check {
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 5px;
+    display: flex; /* Display checkbox and label side by side */
+  align-items: center; /* Vertically center checkbox and label */
+  margin-bottom: 10px; /* Adjust the spacing between checkboxes */
+}
+.checkbox-container{
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+}
+label {
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex; /* Display label and checkbox side by side */
+    align-items: center; /* Vertically center label and checkbox */
+    margin-bottom: 10px; /* Adjust the spacing between checkboxes */
+}
+input[type="checkbox"] {
+    margin-right: 15px; /* Add spacing between checkbox and text */
+    margin-left: 15px;
+}
+/* style for buttons */
+button {
+  background-color: #FFA458;
+  color: white;
+  padding: 10px 20px; 
+  border: none;
+  cursor: pointer;
+  width: 200px;
+  height: 50px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: large;
+  margin-top: 40px;
+}
+
+.center-container {
+    text-align: center;
+}
+
+
+/* padding to container elements */
+.container {
+  padding: 50px;
+  margin-left: 10px;
+  
+}
