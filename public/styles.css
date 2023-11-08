@@ -69,8 +69,7 @@ a{
 .wrapper .muu_sisu{
     width: 80vw;
     margin-left: 17vw;
-    height: 100vh
-    ;
+    height: 100vh   ;
 
 
 }
@@ -147,4 +146,34 @@ button{
     cursor: pointer;
     transition: background-color 250ms;
 
+}
+
+.images{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    gap: 12px;
+    margin-left: 32px;
+    width: 80%;
+    margin: 100px auto;
+}
+
+.images img{
+    padding: 16px;
+    border-radius: 8px;
+    background: #fff;
+    width: 150px;
+    height: 120px;
+    cursor: pointer;
+
+}
+.images div{
+ 
+}
+
+.images p{
+    color: #fff;
+    font-size: 18px;
+    text-shadow: 0 0 3px #cebbbb, 0 0 5px #0c0c14;  
+    
 }
