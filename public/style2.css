@@ -1,0 +1,103 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background: url(images/kitchen7.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+h1{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 40px;
+    position: fixed;
+    top: 70px;
+    color:#fff;
+    left: 320px;
+    text-shadow: 0 0 3px #cebbbb, 0 0 5px #0c0c14;
+
+}
+a{
+    color: #fff;
+    text-decoration: none;
+}
+.wrapper .navbar{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 17vw;
+    height: 100vh;
+}
+.wrapper .navbar ul li{
+    list-style: none;
+    padding: 20px;
+    border-bottom: 1px rgba(0, 0, 0, 0);
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+.wrapper .navbar .sotsiaalmeedia{
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translate(-50%);
+    font-size: 25px;
+    display: flex;
+    height: 40px;
+
+}
+.wrapper .navbar .sotsiaalmeedia a{
+    margin:0 15px;
+    background: #422e27;
+    border-radius: 5px;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+}
+.wrapper .navbar .sotsiaalmeedia a i{
+    margin: 0 auto;
+
+}
+.wrapper .navbar .sotsiaalmeedia a:hover{
+    transition: 1s;
+    transform: rotate(360deg);
+    
+}
+.wrapper{
+    position: relative;
+
+}
+.wrapper .muu_sisu{
+    width: 80vw;
+    margin-left: 17vw;
+
+
+}
+button{
+    font: inherit;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #ffffff;
+    padding: 0.75em 3em;
+    background: #422e27;
+    border: 0.1em solid rgb(83, 81, 81);
+    border-radius: 100vw;
+    cursor: pointer;
+    transition: background-color 250ms;
+    position: fixed;
+    top: 10px;
+    right: 10px;;
+}
+button2{
+    font: inherit;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #fff;
+    padding: 0.75em 3em;
+    background: gray;
+    border: 0.1em solid rgb(83, 81, 81);
+    border-radius: 100vw;
+    cursor: pointer;
+    transition: background-color 250ms;
+    position: fixed;
+    top: 10px;
+    right: 200px;
+}
