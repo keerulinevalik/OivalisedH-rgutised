@@ -155,7 +155,7 @@ button{
     gap: 12px;
     margin-left: 32px;
     width: 80%;
-    margin: 100px auto;
+    margin: 160px auto;
 }
 
 .images img{
@@ -176,4 +176,39 @@ button{
     font-size: 18px;
     text-shadow: 0 0 3px #cebbbb, 0 0 5px #0c0c14;  
     
+}
+button3{
+    font: inherit;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #ffffff;
+    padding: 0.75em 3em;
+    background: #422e27;
+    border: 0.1em solid rgb(83, 81, 81);
+    border-radius: 100vw;
+    cursor: pointer;
+    transition: background-color 250ms;
+    position: fixed;
+    top: 10px;
+    right: 10px;;
+}
+button2{
+    font: inherit;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #fff;
+    padding: 0.75em 3em;
+    background: gray;
+    border: 0.1em solid rgb(83, 81, 81);
+    border-radius: 100vw;
+    cursor: pointer;
+    transition: background-color 250ms;
+    position: fixed;
+    top: 10px;
+    right: 200px;
+}
+.header{
+    position: absolute;
+    font: inherit;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #fff;
+    text-shadow: 0 0 3px #cebbbb, 0 0 5px #0c0c14;
 }
