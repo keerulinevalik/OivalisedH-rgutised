@@ -69,7 +69,8 @@ a{
 .wrapper .muu_sisu{
     width: 80vw;
     margin-left: 17vw;
-    height: 100vh   ;
+    height: 100vh;
+    margin-top: 100px;
 
 
 }
@@ -155,7 +156,7 @@ button{
     gap: 12px;
     margin-left: 32px;
     width: 80%;
-    margin: 160px auto;
+    margin: 100px auto;
 }
 
 .images img{
@@ -174,7 +175,9 @@ button{
 .images p{
     color: #fff;
     font-size: 18px;
-    text-shadow: 0 0 3px #cebbbb, 0 0 5px #0c0c14;  
+    text-shadow: 0 0 3px #cebbbb, 0 0 5px #0c0c14;
+    cursor: pointer;
+    width: max-content;
     
 }
 button3{
@@ -205,10 +208,12 @@ button2{
     top: 10px;
     right: 200px;
 }
-.header{
-    position: absolute;
+
+h2{
+    font-size: 40px !important;
     font: inherit;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: #fff;
     text-shadow: 0 0 3px #cebbbb, 0 0 5px #0c0c14;
+    margin-left: 100px;
 }
