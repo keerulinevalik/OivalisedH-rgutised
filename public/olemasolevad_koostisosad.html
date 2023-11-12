@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel = "stylesheet" href = "olemasolevad_koostisosad.css">
+    <title>Recipe Ingredients</title>
+    <style>
+        
+
+        input[type="text"] {
+            width: 100%;
+            padding: 5px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        /* peida checkboxid */
+        label {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Olemasolevad koostisosad</h1>
+
+    <form>
+        <input type="text" id="ingredientSearch" placeholder="Otsi koostisosasid...">
+        <label>
+            <input type="checkbox" name="ingredient" value="jahu"> Jahu
+        </label>
+        <label>
+            <input type="checkbox" name="ingredient" value="suhkur"> Suhkur
+        </label>
+        <label>
+            <input type="checkbox" name="ingredient" value="munad"> Munad
+        </label>
+        <label>
+            <input type="checkbox" name="ingredient" value="piim"> Piim
+        </label>
+        <!-- rohkem koostisosasid -->
+    </form>
+
+    <h1>Recipes</h1>
+
+    <div id="recipes">
+        <div class="recipe" data-ingredients="jahu, suhkur">
+            <h2>Šokolaadi kook</h2>
+            <p>Koostisosad: jahu, suhkur</p>
+            <p>Juhised: ...</p>
+        </div>
+        <div class="recipe" data-ingredients="munad, piim">
+            <h2>Pannkoogid</h2>
+            <p>Koostisosad: munad, piim</p>
+            <p>Juhised: ...</p>
+        </div>
+        <!-- peaks siia kõik retseptide previewd panema -->
+    </div>
+
+    <script>
+const searchInput = document.getElementById('ingredientSearch');
+const checkboxes = document.querySelectorAll('input[type="checkbox"][name="ingredient"]');
+const recipes = document.querySelectorAll('.recipe');
+
+function updateVisibility() {
+    const checkedIngredients = Array.from(checkboxes)
+        .filter(checkbox => checkbox.checked)
+        .map(checkbox => checkbox.value.toLowerCase());
+
+    recipes.forEach(recipe => {
+        const ingredients = recipe.getAttribute('data-ingredients').split(', ').map(ingredient => ingredient.toLowerCase());
+        const shouldDisplayRecipe = checkedIngredients.every(ingredient => ingredients.includes(ingredient));
+
+        recipe.style.display = shouldDisplayRecipe ? 'block' : 'none';
+    }
+    );
+
+    checkboxes.forEach(checkbox => {
+        const ingredientName = checkbox.value.toLowerCase();
+        const label = checkbox.closest('label');
+        const searchValue = searchInput.value.toLowerCase();
+        const shouldBeDisplayed = ingredientName.includes(searchValue);
+
+        if (checkbox.checked || shouldBeDisplayed) {
+            label.style.display = 'block';
+        } else {
+            label.style.display = 'none';
+        }
+    });
+}
+
+searchInput.addEventListener('input', updateVisibility);
+
+checkboxes.forEach(checkbox => {
+    checkbox.addEventListener('change', updateVisibility);
+    // esialgu on kõike näha
+    checkbox.closest('label').style.display = 'block';
+});
+
+// initialize visibility
+updateVisibility();
+
+    </script>
+</body>
+</html>

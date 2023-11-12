@@ -1,0 +1,90 @@
+body, h1 {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+h1 {
+    background-color: #FFA458; /* peaks muutma värviskeemi vb */
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin: 20px;
+}
+
+form input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+}
+
+/* labelid ja checkboxid */
+label {
+    display: block;
+    margin: 5px 0;
+    position: relative;
+    cursor: pointer;
+}
+
+
+input[type="checkbox"] + label::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 2px;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #5872FF; /* komplementaarne värv */
+    background-color: #fff;
+    border-radius: 3px;
+    visibility: visible; /* checkboxid nähtavaks */
+}
+
+input[type="checkbox"]:checked + label::before {
+    background-color: #5872FF; 
+    border-color: #5872FF; 
+}
+
+/* recipe container */
+#recipes {
+    margin: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.recipe {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    width: calc(33.33% - 20px);
+}
+
+.recipe h2 {
+    font-size: 24px;
+    margin: 0;
+    color: #5872FF;
+}
+
+.recipe p {
+    margin: 10px 0;
+    color: #666;
+}
