@@ -1,46 +1,106 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Olemasolevad koostisosad</title>
-    <script src="https://kit.fontawesome.com/b4903e653c.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="style2.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
+    <link rel = "stylesheet" href = "olemasolevad_koostisosad.css">
+    <title>Recipe Ingredients</title>
+    <style>
+        
+
+        input[type="text"] {
+            width: 100%;
+            padding: 5px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        /* peida checkboxid */
+        label {
+            display: none;
+        }
+    </style>
 </head>
 <body>
-    <h1>
-        Tere Tulemast Oivaliste Hõrgutiste veebilehele! 
-    </h1>
-    <div class="wrapper">
+    <h1>Olemasolevad koostisosad</h1>
 
-        <div class="muu_sisu">
+    <form>
+        <input type="text" id="ingredientSearch" placeholder="Otsi koostisosasid...">
+        <label>
+            <input type="checkbox" name="ingredient" value="jahu"> Jahu
+        </label>
+        <label>
+            <input type="checkbox" name="ingredient" value="suhkur"> Suhkur
+        </label>
+        <label>
+            <input type="checkbox" name="ingredient" value="munad"> Munad
+        </label>
+        <label>
+            <input type="checkbox" name="ingredient" value="piim"> Piim
+        </label>
+        <!-- rohkem koostisosasid -->
+    </form>
+
+    <h1>Recipes</h1>
+
+    <div id="recipes">
+        <div class="recipe" data-ingredients="jahu, suhkur">
+            <h2>Šokolaadi kook</h2>
+            <p>Koostisosad: jahu, suhkur</p>
+            <p>Juhised: ...</p>
         </div>
-        <div class="navbar">
-            <img src="images/uuslogo.png" style="height: 243px;"></h1>
-
-            <ul>
-                <li><a href="index2.html">Avaleht</a></li>
-                <li><a href="fridge.html">Külmkapi sisu</a></li>
-                <li><a href="olemasolevad_koostisosad.html">Olemasolevad koostisosad</a></li>
-                <li><a href="recipes.html">Retseptid</a></li>
-                <li><a href="olemasolevad_koostisosad.html">Salvestatud retseptid</a></li>
-            </ul>
-
-            <div class="sotsiaalmeedia">
-                <a href=https://www.facebook.com/ylikool/><i class="fab fa-facebook"></i></a>
-                <a href=https://www.instagram.com/taltechuniversity/><i class="fab fa-instagram"></i></a>
-                <a href=https://twitter.com/TallinnTech><i class="fab fa-twitter"></i></a>
-                <a href=https://www.youtube.com/watch?v=_xupBQHTKE8><i class="fab fa-youtube"></i></a>
-            </div>
+        <div class="recipe" data-ingredients="munad, piim">
+            <h2>Pannkoogid</h2>
+            <p>Koostisosad: munad, piim</p>
+            <p>Juhised: ...</p>
         </div>
+        <!-- peaks siia kõik retseptide previewd panema -->
     </div>
-    <button2><a href="konto_loomine.html">Loo kasutaja</a>
-    </button2>
-</body>
-<body>
-    <button><a href="login.html">Logi sisse</a>
-    </button>
+
+    <script>
+const searchInput = document.getElementById('ingredientSearch');
+const checkboxes = document.querySelectorAll('input[type="checkbox"][name="ingredient"]');
+const recipes = document.querySelectorAll('.recipe');
+
+function updateVisibility() {
+    const checkedIngredients = Array.from(checkboxes)
+        .filter(checkbox => checkbox.checked)
+        .map(checkbox => checkbox.value.toLowerCase());
+
+    recipes.forEach(recipe => {
+        const ingredients = recipe.getAttribute('data-ingredients').split(', ').map(ingredient => ingredient.toLowerCase());
+        const shouldDisplayRecipe = checkedIngredients.every(ingredient => ingredients.includes(ingredient));
+
+        recipe.style.display = shouldDisplayRecipe ? 'block' : 'none';
+    }
+    );
+
+    checkboxes.forEach(checkbox => {
+        const ingredientName = checkbox.value.toLowerCase();
+        const label = checkbox.closest('label');
+        const searchValue = searchInput.value.toLowerCase();
+        const shouldBeDisplayed = ingredientName.includes(searchValue);
+
+        if (checkbox.checked || shouldBeDisplayed) {
+            label.style.display = 'block';
+        } else {
+            label.style.display = 'none';
+        }
+    });
+}
+
+searchInput.addEventListener('input', updateVisibility);
+
+checkboxes.forEach(checkbox => {
+    checkbox.addEventListener('change', updateVisibility);
+    // esialgu on kõike näha
+    checkbox.closest('label').style.display = 'block';
+});
+
+// initialize visibility
+updateVisibility();
+
+    </script>
 </body>
 </html>
